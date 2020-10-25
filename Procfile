@@ -1,1 +1,1 @@
-bot: java -jar target/WeatherTwentyFourSevenBot-1.0-SNAPSHOT.jar
+web: java -jar target/classes/api/bot/BotInitializer.class
