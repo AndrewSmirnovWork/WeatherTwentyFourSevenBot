@@ -1,1 +1,1 @@
-web: java -cp target/classes/:target/dependency/* com.werdna.api.bot.BotInitializer
+web: java -cp target/classes/:target/dependency/* api.bot.BotInitializer
