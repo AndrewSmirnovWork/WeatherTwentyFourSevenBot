@@ -1,1 +1,1 @@
-worker: java -jar target/WeatherTwentyFourSevenBot-1.0-SNAPSHOT.jar api.bot.BotInitializer
+worker: sh target/bin/BotInitializer
