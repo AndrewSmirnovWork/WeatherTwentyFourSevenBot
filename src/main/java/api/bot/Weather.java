@@ -12,12 +12,12 @@ import java.util.Scanner;
 public class Weather {
 
 
-    public static String get5DaysWeather(WeekWeatherModel weekWeatherModel) throws IOException {
+    public static String get5DaysWeather(String cityName, WeekWeatherModel weekWeatherModel) throws IOException {
 
         //93fd8e0a9c66f31c607cacb02d504f53
         //double latitude = Double.parseDouble(lat);
         ///double longitude = Double.parseDouble(lon);
-        URL url = new URL("https://api.openweathermap.org/data/2.5/onecall?lat=59.9167&lon=30.25&units=metric&exclude=current,minutely,hourly,alerts&appid=93fd8e0a9c66f31c607cacb02d504f53");
+        URL url = new URL("https://api.openweathermap.org/data/2.5/onecall?"+cityName+"&units=metric&exclude=current,minutely,hourly,alerts&appid=93fd8e0a9c66f31c607cacb02d504f53");
 
         Scanner scanner = new Scanner((InputStream) url.getContent());
         String result = "";
@@ -51,7 +51,7 @@ public class Weather {
         }
 
         return "timeZone: " + weekWeatherModel.getTimeZone() + "\n" +
-                "Morning avg Temperature: " + weekWeatherModel.getMornTemp() + "C\n" +
-                "Max Morning Temperature: " + weekWeatherModel.getMaxTemp() + "C\n";
+                "Morning average Temperature: " + weekWeatherModel.getMornTemp() + "C\n" +
+                "Maximum Morning Temperature: " + weekWeatherModel.getMaxTemp() + "C\n";
     }
 }

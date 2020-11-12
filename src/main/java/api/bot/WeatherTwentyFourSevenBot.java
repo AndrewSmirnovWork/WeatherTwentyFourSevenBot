@@ -39,12 +39,11 @@ public class WeatherTwentyFourSevenBot extends TelegramLongPollingBot {
             try {
                 switch (text) {
                     case ("Hello, what can u do"):
-                        sendMsg(message, "Write something to get forecast temperature");
+                        sendMsg(message, "Write name of the city to get forecast temperature");
                         break;
-
                     default:
                         //sendMsg(message, Weather.getCurrentWeather(text, weatherModel));
-                        sendMsg(message, Weather.get5DaysWeather(weekWeatherModel));
+                        sendMsg(message, Weather.get5DaysWeather(message.getText(), weekWeatherModel));
 
                 }
             } catch (Exception e) {
@@ -59,6 +58,7 @@ public class WeatherTwentyFourSevenBot extends TelegramLongPollingBot {
         sendMessage.enableMarkdown(false);
         // setting chat id
         sendMessage.setChatId(message.getChatId());
+        //message id
         sendMessage.setReplyToMessageId(message.getMessageId());
         sendMessage.setText(text);
         //set keyboards
